@@ -29,6 +29,15 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
 
+PRODUCT_PACKAGES += \
+    com.sony.device \
+    com.sonymobile.album \
+    com.sonymobile.album.internal \
+    com.sony.device.xml \
+    com.sonymobile.album.xml \
+    com.sonymobile.album.internal.xml \
+    privapp-permissions-sony.xml
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
@@ -41,3 +50,11 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 TARGET_USE_CUSTOM_POWERHINT := true
 
 include $(DEVICE_PATH)/device/*.mk
+
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+OVERRIDE_ENABLE_UFFD_GC := false
+
+PRODUCT_COPY_FILES += \
+    device/sony/lilac/rootdir/etc/init.lilac-secd-override.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lilac-secd-override.rc \
+    device/sony/lilac/rootdir/etc/init.lilac-cpuset.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lilac-cpuset.rc \
+    device/sony/lilac/rootdir/bin/init.lilac-cpuset.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.lilac-cpuset.sh

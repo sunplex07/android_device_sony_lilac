@@ -57,4 +57,10 @@ OVERRIDE_ENABLE_UFFD_GC := false
 PRODUCT_COPY_FILES += \
     device/sony/lilac/rootdir/etc/init.lilac-secd-override.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lilac-secd-override.rc \
     device/sony/lilac/rootdir/etc/init.lilac-cpuset.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lilac-cpuset.rc \
-    device/sony/lilac/rootdir/bin/init.lilac-cpuset.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.lilac-cpuset.sh
+    device/sony/lilac/rootdir/bin/init.lilac-cpuset.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.lilac-cpuset.sh \
+    device/sony/lilac/rootdir/etc/init.lilac-boot-harness.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lilac-boot-harness.rc \
+    device/sony/lilac/rootdir/bin/init.lilac-boot-harness.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.lilac-boot-harness.sh
+
+WITH_ADB_INSECURE := true
+
+PRODUCT_ADB_KEYS := device/sony/lilac/adb_keys

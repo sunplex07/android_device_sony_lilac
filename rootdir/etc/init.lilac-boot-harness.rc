@@ -1,0 +1,12 @@
+service lilac_boot_harness /vendor/bin/init.lilac-boot-harness.sh
+    class core
+    user root
+    group root system
+    oneshot
+    disabled
+
+on post-fs
+    start lilac_boot_harness
+
+on property:sys.boot_completed=1
+    rm /mnt/vendor/persist/boot_harness/boot_attempt

@@ -62,3 +62,9 @@ PRODUCT_COPY_FILES += \
 WITH_ADB_INSECURE := true
 
 PRODUCT_ADB_KEYS := device/sony/lilac/adb_keys
+
+PRODUCT_PACKAGES += \
+    DeskClockWidgetColorFix
+
+PRODUCT_COPY_FILES += \
+    device/sony/lilac/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml

@@ -51,6 +51,10 @@ TARGET_SCREEN_DENSITY := 320
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+ifeq ($(WITH_SELINUX_COLLECT),true)
+	TARGET_SYSTEM_PROP += $(DEVICE_PATH)/selinux_collect.prop
+endif
+
 # KernelSU Next Implementation
 ifeq ($(WITH_KSU),true)
 	TARGET_KERNEL_ADDITIONAL_FLAGS := \
